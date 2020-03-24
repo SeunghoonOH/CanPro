@@ -48,10 +48,10 @@ class CanNode():
 
         CanFrame.id = int('0x141', 16)
 	
-	    index = np.uint8(int('0x02', 16))
-	    module = np.uint8(int('0x23', 16))
-	    command = np.uint8(int('0x00', 16))
-	    channel = np.uint8(int('0x00', 16))
+	index = np.uint8(int('0x02', 16))
+	module = np.uint8(int('0x23', 16))
+	command = np.uint8(int('0x00', 16))
+	channel = np.uint8(int('0x00', 16))
 
         VelHex = self.float_to_hex(Canvel)
         VelHex1 = np.uint8(VelHex >> 8 & 0xFF)
@@ -70,7 +70,7 @@ class CanNode():
 	#CanFrame.data =  index + module + command + channel + data1 + data2 + data3 + data4
     # CanFrame.data[0] = 1
        
- 	    CanFrame.data =  index + module + command + channel + VelHex1 + VelHex2 + DeltaHex1 + DeltaHex2
+ 	CanFrame.data =  index + module + command + channel + VelHex1 + VelHex2 + DeltaHex1 + DeltaHex2
         
 	
 	
@@ -100,9 +100,9 @@ class CanNode():
        
        
         index = data[0]
-	    module = data[1]
-	    command = data[2]
-	    channel = data[3]
+	module = data[1]
+	command = data[2]
+	channel = data[3]
 
         data1 = data[4]
         data2 = data[5]
